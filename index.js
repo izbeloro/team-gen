@@ -2,7 +2,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateTeam = require("./src/page-template.js");
 
-// lib 
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
@@ -37,6 +36,8 @@ const questions = async () => {
 
 
 
+    //  console.log(answers);
+    // if manager selected, answer these specific question
     if (answers.role === "Manager") {
         const managerAns = await inquirer
             .prompt([
@@ -54,7 +55,7 @@ const questions = async () => {
         );
         newStaffMemberData.push(newManager);
 
-        
+        // if engineer selected answer these set of questions
     } else if (answers.role === "Engineer") {
         const githubAns = await inquirer
             .prompt([
@@ -72,7 +73,7 @@ const questions = async () => {
         );
         newStaffMemberData.push(newEngineer);
 
-        
+        // if intern selected answer these set of questions
     } else if (answers.role === "Intern") {
         const internAns = await inquirer
             .prompt([
@@ -92,7 +93,7 @@ const questions = async () => {
         newStaffMemberData.push(newIntern);
     }
 
-};
+}; //end of questions function
 
 async function promptQuestions() {
     await questions()
@@ -119,7 +120,7 @@ promptQuestions();
 function createTeam() {
     console.log("new guy", newStaffMemberData)
     fs.writeFileSync(
-        "./disc/index.html",
+        "./output/index.html",
         generateTeam(newStaffMemberData),
         "utf-8"
     );
