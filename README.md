@@ -14,9 +14,9 @@ This webpage was created to generate an html page generating a team. The user an
 ## Usage
 ![ScreenShot](./assets/shot.png)
 
-Link to Deployed Application: N/A
-Github Repo: https://github.com/izbeloro/team-gen
-Video Walkthrough: 
+- Link to Deployed Application: N/A
+- Github Repo: https://github.com/izbeloro/team-gen
+- Video Walkthrough: 
 
 
 To use this challenge, you have to run node. It then asks you a series of questions regarding your name, position, ID and phone number. From there it lets you build a team consisting of Intern, Manager, Employee, and Engineer. After all the questions are answered, it then creates a webpage containing all the information.
